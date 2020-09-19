@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>大事件-登录注册页面</title>
+
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
     
+
+</head>
+
+<body>
+  <!-- layui main  版心 -->
+    <div class="layui-main">
+      <!-- logo板块 -->
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="">
+        </div>
+        <!-- 注册登录框板块 -->
+        <div class="loginbox">
+          <!-- 表单头部 -->
+            <div class="logotitle">
+                <img src="./assets/images/login_title.png" alt="">
+            </div>
+            <!-- 登录框 -->
+            <form class="login-form layui-form" id="login-form">
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="myname" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                  </div>
+                  <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="mypsw" required  lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                  </div>
+                  <button class="layui-btn layui-btn-normal zhulog" lay-submit>登录</button>
+                  <a href="javascript:;" class="tozhuce">去注册</a>
+            </form>
+            <!-- 注册框 -->
+            <form class="zhuce-form layui-form" style="display: none;" id="zhuce-form" >
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="uname" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                  </div>
+                  <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="upsw1" required  lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                  </div>
+                  <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="upsw2" required  lay-verify="required|pwd|repwd" placeholder="再次确认密码" autocomplete="off" class="layui-input">
+                  </div>
+                  <button class="layui-btn layui-btn-normal zhulog" lay-submit>注册</button>
+                  <a href="javascript:;" class="tologin">去登录</a>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/baseAPI.js"></script>
+    <script src="./assets/js/login.js"></script>
 </body>
+
 </html>

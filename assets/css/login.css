@@ -1,0 +1,60 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+body{
+    background: url(../images/login_bg.jpg) no-repeat;
+    background-size: cover;
+}
+.logo{
+    width: 146px;
+    height: 60px;
+    margin-top: 30px;    
+}
+.loginbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    
+}
+.logotitle{
+    width: 400px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+   
+}
+.login-form,
+.zhuce-form{
+    padding: 0 30px;
+}
+.layui-form-item{
+    position: relative;
+    
+}
+.layui-form-item i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
+.layui-form-item input{
+    padding-left: 35px;
+}
+.login-form .zhulog,
+.zhuce-form .zhulog{
+    width: 100%;
+}
+.login-form a,
+.zhuce-form a{
+    float: right;
+    margin-top: 20px;
+}
