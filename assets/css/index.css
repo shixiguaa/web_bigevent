@@ -1,0 +1,47 @@
+.loginout::before{
+    content: "\e865";
+}
+.userinfo{
+   text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 12px;
+    /* 禁止选中文本 */
+    user-select: none;
+}
+.userinfo .avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #999;
+    vertical-align: middle;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    
+}
+.layui-footer{
+    text-align: center;
+}
+.left-nav i{
+    margin-right: 10px;
+}
+.layui-nav-child i{
+    margin-left: 20px;
+}
+
+iframe{
+    height: 100%;
+    width: 100%;
+}
+.layui-body{
+    overflow: hidden;
+}
+a{
+    transition: none !important;
+}
+.layui-side-scroll .userinfo{
+    border-bottom: 1px solid #000;
+}

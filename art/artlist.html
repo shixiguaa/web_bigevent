@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/fonts/iconfont.css">
+    <link rel="stylesheet" href="../assets/css/art.css">
+</head>
+
+<body>
+
+    <div class="layui-card">
+        <div class="layui-card-header">
+            文章列表
+        </div>
+        <div class="layui-card-body">
+            <form class="layui-form" id="artlist">
+                <div class="layui-form-item selectbox">
+
+
+                    <select name="cate_id"  lay-filter='selectart' id="selectart">
+
+                    </select>
+
+                </div>
+                <div class="layui-form-item selectbox">
+
+                    <select name="state" >
+                        <!-- value值，要写成和选项一样，便于后面发请求 -->
+                        <option value="">所有状态</option>
+                        <option value="已发布">已发布</option>
+                        <option value="草稿">草稿</option>
+
+                    </select>
+
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+                </div>
+            </form>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="0">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                    <col width="150">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>文章标题</th>
+                        <th>分类</th>
+                        <th>发表时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+
+            </table>
+            <!-- 分页区 -->
+            <div id="pageBox"></div>
+
+
+        </div>
+    </div>
+    <script type="text/html" id="select1">
+        <option value="">请选择文章类别</option>
+        {{each data}}
+        <option value="{{$value.Id}}">{{$value.name}}</option>
+        {{/each}}
+    </script>
+
+
+
+    <script type="text/html" id="change">
+        <form class="layui-form" id="changeform">
+            <!--  style="display: none;" -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required" placeholder="请输入标题" autocomplete="off"
+                        class="layui-input catename1" value="{{name}}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="alias" required lay-verify="required" placeholder="请输入标题"
+                        autocomplete="off" class="layui-input catename2" value="{{alias}}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button lay-submit class="layui-btn changeart">确认修改</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <script type="text/html" id="table1">
+        {{each data}}
+        <tr>
+            <td>{{$value.title}}</td>
+            <td>{{$value.cate_name}}</td>
+            <td>{{$value.pub_date}}</td>
+            <td>{{$value.state}}</td>
+            <td class='{{$value.Id}}'>
+                <button type="button" class="layui-btn layui-btn-xs artchange">编辑</button>
+                <button type="button" class="layui-btn layui-btn-xs layui-btn-danger artdel">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script src="../assets/lib/template-web.js"></script>
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- <script .src="./assets/lib/layui/layui.js"></script> -->
+    <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/js/baseAPI.js"></script>
+    <script src="../assets/js/artlist.js"></script>
+    <!-- <script src="./assets/js/index.js"></script> -->
+</body>
+
+</html>
