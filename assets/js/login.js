@@ -46,7 +46,7 @@ $(function () {
                 }
                 layer.msg('注册成功，请登录');
                 $('.tologin').click();
-                
+
 
             }
         })
@@ -67,7 +67,7 @@ $(function () {
                 // 保存token,跳转至首页
                 setTimeout(() => {
                     localStorage.setItem('token', res.token);
-                    location.href = '/index.html'
+                    location.href = './index.html'
                 }, 500);
 
 

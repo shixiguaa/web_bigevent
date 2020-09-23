@@ -41,7 +41,7 @@ $('#loginout').on('click', function () {
     }, function () {
         // 删除token，跳回登录页面
         localStorage.removeItem('token');
-        location.href = '/login.html';
+        location.href = './login.html';
     }, function () {
 
     });
